@@ -43,7 +43,7 @@
   },
   "homepage": "https://github.com/MasonLe2497/curved-bottom-navigation-bar#readme",
   "dependencies": {
-    "react-fast-compare": "3.1.1"
+    "react-fast-compare": "https://github.com/JamesPJ/react-fast-compare",
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^11.0.0",
