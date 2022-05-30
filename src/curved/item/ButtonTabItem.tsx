@@ -18,6 +18,7 @@ const ButtonTabItemComponent = (props: TabBarItemProps) => {
   const {
     index,
     selectedIndex,
+    selectedTime,
     countTab,
     indexAnimated,
     width,
@@ -36,7 +37,9 @@ const ButtonTabItemComponent = (props: TabBarItemProps) => {
 
   const _onPress = useCallback(() => {
     selectedIndex.value = index;
-  }, [index, selectedIndex]);
+    selectedTime.value = +new Date();
+    console.log('press', index, selectedTime.value);
+  }, [index, selectedIndex, selectedTime]);
 
   useAnimatedReaction(
     () => isActive.value === index,
