@@ -30,6 +30,7 @@ const CurvedTabBarComponent = (props: TabBarViewProps) => {
   const {
     routes,
     selectedIndex,
+    selectedTime,
     dotSize: SIZE_DOT,
     barHeight: TAB_BAR_HEIGHT,
     duration,
@@ -66,10 +67,10 @@ const CurvedTabBarComponent = (props: TabBarViewProps) => {
       `M0,0 L${width + widthTab / 2 - SIZE_DOT},0
     C${width + widthTab / 2 - SIZE_DOT * 0.5},0 ${
         width + widthTab / 2 - SIZE_DOT * 0.75
-      },${HEIGHT_HOLE} ${width + widthTab / 2},${HEIGHT_HOLE} 
+      },${HEIGHT_HOLE} ${width + widthTab / 2},${HEIGHT_HOLE}
     C${width + widthTab / 2 + SIZE_DOT * 0.75},${HEIGHT_HOLE} ${
         width + widthTab / 2 + SIZE_DOT * 0.5
-      },0 ${width + widthTab / 2 + SIZE_DOT} 0 
+      },0 ${width + widthTab / 2 + SIZE_DOT} 0
     L${width * 2},0 L ${width * 2},${TAB_BAR_HEIGHT} L 0,${TAB_BAR_HEIGHT} Z
     `,
     [width, widthTab, SIZE_DOT, TAB_BAR_HEIGHT],
@@ -145,6 +146,7 @@ const CurvedTabBarComponent = (props: TabBarViewProps) => {
               indexAnimated={indexAnimated}
               countTab={routes.length}
               selectedIndex={selectedIndex}
+              selectedTime={selectedTime}
               index={index}
               {...configs}
             />
