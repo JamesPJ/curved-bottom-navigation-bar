@@ -35,6 +35,7 @@ export interface TabBarViewProps extends TabBarAnimationConfigurableProps {
    * Selected animated index.
    */
   selectedIndex: Animated.SharedValue<number>;
+  selectedTime: Animated.SharedValue<number>;
   /**
    * Mapped routes with tab configs to be presented.
    */
@@ -67,6 +68,7 @@ export interface TabBarItemProps
    * Selected animated index.
    */
   selectedIndex: Animated.SharedValue<number>;
+  selectedTime: Animated.SharedValue<number>;
 
   index: number;
 
