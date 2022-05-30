@@ -74,6 +74,7 @@ const AnimatedTabBarComponent = (props: AnimatedTabBarProps) => {
 
   // reanimated
   const selectedIndex = useSharedValue(0);
+  const selectedTime = useSharedValue(0);
 
   // callbacks
   const getRouteTitle = useCallback(
@@ -121,7 +122,7 @@ const AnimatedTabBarComponent = (props: AnimatedTabBarProps) => {
         });
       }
     },
-    [routes, navigation, navigationKey],
+    [routes, navigation],
   );
 
   // Effects
@@ -132,11 +133,11 @@ const AnimatedTabBarComponent = (props: AnimatedTabBarProps) => {
   }, [navigationIndex]);
 
   useAnimatedReaction(
-    () => selectedIndex.value,
+    () => ({selected: selectedIndex.value, time: selectedTime.value}),
     nextSelected => {
-      runOnJS(handleSelectedIndexChange)(nextSelected);
+      runOnJS(handleSelectedIndexChange)(nextSelected.selected);
     },
-    [selectedIndex, handleSelectedIndexChange],
+    [selectedIndex, selectedTime, handleSelectedIndexChange],
   );
 
   // render
@@ -148,6 +149,7 @@ const AnimatedTabBarComponent = (props: AnimatedTabBarProps) => {
       dotSize={dotSize}
       tabBarColor={barColor}
       selectedIndex={selectedIndex}
+      selectedTime={selectedTime}
       routes={getRoutes()}
       duration={duration}
     />
