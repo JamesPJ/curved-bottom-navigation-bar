@@ -73,7 +73,7 @@ const AnimatedTabBarComponent = (props: AnimatedTabBarProps) => {
   }, [state]);
 
   // reanimated
-  const selectedIndex = useSharedValue(0);
+  const selectedIndex = useSharedValue(2);
   const selectedTime = useSharedValue(0);
 
   // callbacks
