@@ -3,10 +3,12 @@ import type Animated from 'react-native-reanimated';
 
 export interface TabIconProps {
   progress: Animated.SharedValue<number>;
+  focused: boolean;
 }
 export interface TabTitleProps {
   progress: Animated.SharedValue<number>;
   title: string;
+  focused: boolean;
 }
 export interface TabConfigsType {
   icon: (props: TabIconProps) => React.ReactNode;
@@ -25,7 +27,7 @@ export interface TabBarAnimationConfigurableProps {
   duration?: number;
 }
 
-interface TabRoute extends TabConfigsType {
+export interface TabRoute extends TabConfigsType {
   key: string;
   title: string;
 }
@@ -56,9 +58,15 @@ export interface TabBarViewProps extends TabBarAnimationConfigurableProps {
    */
   dotColor: string;
 
+  navigationIndex: number;
+
   barHeight: number;
 
+  barWidth?: number;
+
   titleShown: boolean;
+
+  isRtl: boolean;
 }
 
 export interface TabBarItemProps
@@ -79,6 +87,8 @@ export interface TabBarItemProps
   width: number;
 
   title?: string;
+
+  focused: boolean;
 }
 export interface DotProps {
   /**
@@ -101,4 +111,8 @@ export interface DotProps {
   dotColor: string;
 
   barHeight: number;
+
+  isRtl: boolean;
+
+  navigationIndex: number;
 }
