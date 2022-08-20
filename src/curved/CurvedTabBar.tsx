@@ -89,6 +89,7 @@ const CurvedTabBarComponent = (props: TabBarViewProps) => {
           indexAnimated={indexAnimated}
           countTab={routes.length}
           selectedIndex={selectedIndex}
+          selectedTime={selectedTime}
           index={index}
           {...configs}
         />
@@ -170,22 +171,7 @@ const CurvedTabBarComponent = (props: TabBarViewProps) => {
           routes={routes}
           progress={progress}
         />
-        {routes.map(({key, title, ...configs}, index) => {
-          return (
-            <ButtonTab
-              width={width}
-              key={key}
-              title={title}
-              titleShown={titleShown}
-              indexAnimated={indexAnimated}
-              countTab={routes.length}
-              selectedIndex={selectedIndex}
-              selectedTime={selectedTime}
-              index={index}
-              {...configs}
-            />
-          );
-        })}
+        {routes.map(renderButtonTab)}
       </View>
     </>
   );

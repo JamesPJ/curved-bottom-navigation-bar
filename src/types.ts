@@ -58,7 +58,7 @@ export interface TabBarViewProps extends TabBarAnimationConfigurableProps {
    */
   dotColor: string;
 
-  navigationIndex: number;
+  navigationIndex?: number;
 
   barHeight: number;
 
@@ -114,5 +114,5 @@ export interface DotProps {
 
   isRtl: boolean;
 
-  navigationIndex: number;
+  navigationIndex?: number;
 }

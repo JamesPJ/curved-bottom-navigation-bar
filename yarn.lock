@@ -7958,10 +7958,9 @@ react-devtools-core@^4.13.0:
     shell-quote "^1.6.1"
     ws "^7"
 
-react-fast-compare@3.1.1:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/react-fast-compare/-/react-fast-compare-3.1.1.tgz"
-  integrity sha512-SCsAORWK59BvauR2L1BTdjQbJcSGJJz03U0awektk2hshLKrITDDFTlgGCqIZpTDlPC/NFlZee6xTMzXPVLiHw==
+"react-fast-compare@https://github.com/JamesPJ/react-fast-compare":
+  version "3.2.0"
+  resolved "https://github.com/JamesPJ/react-fast-compare#ed614ede61adde68d63e714b19f430c8610e5264"
 
 react-freeze@^1.0.0:
   version "1.0.0"
